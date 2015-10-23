@@ -8,7 +8,7 @@ Standards-Version: 3.9.6
 #Vcs-Git: git://anonscm.debian.org/collab-maint/base-config.git
 #Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/base-config.git;a=summary
 
-Package: base-config
+Package: crowdos-base-config
 Architecture: all
 Depends: ${misc:Depends}
 Description: Basic configurtion
