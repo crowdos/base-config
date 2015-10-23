@@ -12,6 +12,7 @@ case "$1" in
     configure)
     if [ -z "$2" ]; then
         create_hostname_file
+	echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections
     fi
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
