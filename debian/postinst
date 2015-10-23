@@ -1,0 +1,24 @@
+#!/bin/sh -e
+
+create_hostname_file() {
+  if [ -e /etc/hostname ]; then return 0; fi
+
+  cat > /etc/hostname <<-EOF
+localhost
+EOF
+}
+
+case "$1" in
+    configure)
+    if [ -z "$2" ]; then
+        create_hostname_file
+    fi
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+    echo "postinst called with unknown argument '$1'" >&2
+    exit 1
+    ;;
+esac
