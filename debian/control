@@ -1,6 +1,6 @@
 Source: base-config
 Section: admin
-Priority: required
+Priority: important
 Maintainer: Mohammed Sameer <msameer@foolab.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
@@ -10,7 +10,7 @@ Standards-Version: 3.9.6
 
 Package: crowdos-base-config
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, netbase
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.
