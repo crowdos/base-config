@@ -1,0 +1,16 @@
+Source: base-config
+Section: admin
+Priority: required
+Maintainer: Mohammed Sameer <msameer@foolab.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+#Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://anonscm.debian.org/collab-maint/base-config.git
+#Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/base-config.git;a=summary
+
+Package: base-config
+Architecture: all
+Depends: ${misc:Depends}
+Description: Basic configurtion
+ Basic files and configuration intended to override some Debian
+ configuration.
