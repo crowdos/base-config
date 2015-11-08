@@ -60,3 +60,6 @@ dmesg > /var/log/dmesg.log
 # TODO: fsck, urandom
 
 #[ -x /sbin/init-extra.sh ] && 
+
+# TODO: we need to check boot parameters and decide which runlevel to use
+runsvchdir default > /dev/null
