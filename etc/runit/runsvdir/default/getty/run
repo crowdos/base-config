@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec chpst -P /sbin/getty -8 38400 ttyS0
