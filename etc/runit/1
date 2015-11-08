@@ -1,0 +1,62 @@
+#!/bin/sh
+# system one time tasks
+
+PATH=/command:/sbin:/bin:/usr/sbin:/usr/bin
+
+echo "Starting"
+
+# Let's prepare our filesystems:
+mount -t devtmpfs udev /dev -osize=10M,mode=0755
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts -onoexec,nosuid,gid=5,mode=0620
+mount -t proc proc /proc -onodev,noexec,nosuid
+mount -t sysfs sys /sys -onodev,noexec,nosuid
+mount -t tmpfs tmpfs /run -onosuid,size=20%,mode=0755
+mount -t tmpfs tmpfs /tmp -onodev
+
+mkdir -p -m0755 /run/user
+mkdir -p -m0755 /run/var
+mkdir -p -m0755 /run/lock
+mkdir -p -m0755 /run/shm
+mkdir -p -m0755 /run/network
+chmod 1777 /run/shm
+ln -sfn /run/shm /dev/shm
+
+mount / -oremount,rw
+mount -na
+
+ln -sf /run /var/run
+ln -sf /proc/mounts /etc/mtap
+
+# hostname
+[ -f /etc/hostname ] && HOSTNAME="$(cat /etc/hostname)"
+[ -z "$HOSTNAME" ] && HOSTNAME=localhost
+hostname "$HOSTNAME"
+
+# loopback
+ifup lo
+
+# console log level
+dmesg -n 1
+
+# hwclock
+hwclock --utc --hctosys --noadjfile
+
+# udev:
+/sbin/udevd --daemon
+/sbin/udevadm trigger
+/sbin/udevadm settle
+
+# phew, now the rest
+swapon -a
+
+[ -f "/etc/sysctl.conf" ] && sysctl -q -p
+
+dmesg > /var/log/dmesg.log
+
+# timezone
+[ -f /etc/localtime ] || cat /usr/share/zoneinfo/Europe/Helsinki > /etc/localtime
+
+# TODO: fsck, urandom
+
+#[ -x /sbin/init-extra.sh ] && 
