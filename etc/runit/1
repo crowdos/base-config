@@ -22,6 +22,11 @@ mkdir -p -m0755 /run/network
 chmod 1777 /run/shm
 ln -sfn /run/shm /dev/shm
 
+# symlink targets used for shutting down and rebooting and supervisor directories
+mkdir -p /run/runit/
+touch /run/runit/stopit
+touch /run/runit/reboot
+
 mount / -oremount,rw
 mount -na
 
