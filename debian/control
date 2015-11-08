@@ -1,16 +1,15 @@
-Source: base-config
+Source: crowdos-base
 Section: admin
 Priority: important
 Maintainer: Mohammed Sameer <msameer@foolab.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
-#Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://anonscm.debian.org/collab-maint/base-config.git
-#Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/base-config.git;a=summary
+Vcs-Git: https://github.com/crowdos/crowdos-base.git
+Vcs-Browser: https://github.com/crowdos/crowdos-base
 
-Package: crowdos-base-config
+Package: crowdos-base
 Architecture: all
-Depends: ${misc:Depends}, netbase
+Depends: ${misc:Depends}, netbase, linux-image, runit
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.
