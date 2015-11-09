@@ -19,6 +19,8 @@ mkdir -p -m0755 /run/var
 mkdir -p -m0755 /run/lock
 mkdir -p -m0755 /run/shm
 mkdir -p -m0755 /run/network
+mkdir -p -m0755 /run/runit
+
 chmod 1777 /run/shm
 ln -sfn /run/shm /dev/shm
 
