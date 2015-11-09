@@ -15,6 +15,7 @@ Conflicts: init, sysvinit-core
 Depends: ${misc:Depends},
          netbase,
          linux-image,
+	 crowdos-config,
          runit,
          ifupdown,
          dconf-cli,
