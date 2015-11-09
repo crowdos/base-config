@@ -10,6 +10,8 @@ Vcs-Browser: https://github.com/crowdos/crowdos-base
 Package: crowdos-base
 Architecture: all
 Essential: yes
+Provides: sysvinit-core, init
+Conflicts: init, sysvinit-core
 Depends: ${misc:Depends},
          netbase,
          linux-image,
