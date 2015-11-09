@@ -9,6 +9,7 @@ Vcs-Browser: https://github.com/crowdos/crowdos-base
 
 Package: crowdos-base
 Architecture: all
+Essential: yes
 Depends: ${misc:Depends},
          netbase,
          linux-image,
