@@ -9,7 +9,14 @@ Vcs-Browser: https://github.com/crowdos/crowdos-base
 
 Package: crowdos-base
 Architecture: all
-Depends: ${misc:Depends}, netbase, linux-image, runit, ifupdown
+Depends: ${misc:Depends},
+         netbase,
+         linux-image,
+         runit,
+         ifupdown,
+         dconf-cli,
+         dconf-service,
+         dconf-gsettings-backend
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.

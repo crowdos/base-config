@@ -10,10 +10,14 @@ EOF
 
 case "$1" in
     configure)
+    /usr/bin/dconf update
     if [ -z "$2" ]; then
         create_hostname_file
 	echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections
     fi
+    ;;
+    triggered)
+	/usr/bin/dconf update
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
     ;;
