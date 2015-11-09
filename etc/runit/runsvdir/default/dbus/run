@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p /var/run/dbus
+chown messagebus /var/run/dbus
+chgrp messagebus /var/run/dbus
+
+/usr/bin/dbus-uuidgen --ensure
+exec chpst -umessagebus /usr/bin/dbus-daemon --nofork --nopidfile --system

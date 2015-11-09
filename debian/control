@@ -16,7 +16,8 @@ Depends: ${misc:Depends},
          ifupdown,
          dconf-cli,
          dconf-service,
-         dconf-gsettings-backend
+         dconf-gsettings-backend,
+         dbus
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.

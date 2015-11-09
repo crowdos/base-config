@@ -5,3 +5,4 @@ run/runit/reboot etc/runit/reboot
 
 # services:
 run/runit/getty etc/runit/runsvdir/default/getty/supervise
+run/runit/dbus etc/runit/runsvdir/default/dbus/supervise
