@@ -30,7 +30,8 @@ touch /run/runit/stopit
 touch /run/runit/reboot
 
 mount / -oremount,rw
-mount -na
+# Stolen from initscripts mountall.sh
+mount -na -t nonfs,nfs4,smbfs,cifs,ncp,ncpfs,coda,ocfs2,gfs,gfs2,ceph -O no_netdev
 
 ln -sf /run /var/run
 ln -sf /proc/mounts /etc/mtap
