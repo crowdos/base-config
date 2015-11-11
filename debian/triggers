@@ -1,2 +1,2 @@
-interest /etc/dconf/db/override
-interest /etc/dconf/db/crowdos
+interest /etc/dconf/db/override.d
+interest /etc/dconf/db/crowdos.d
