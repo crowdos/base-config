@@ -21,7 +21,8 @@ Depends: ${misc:Depends},
          dconf-cli,
          dconf-service,
          dconf-gsettings-backend,
-         dbus
+         dbus,
+         whynot
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.
