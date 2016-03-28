@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/bin/systemstated /usr/lib/systemstate/plugins/

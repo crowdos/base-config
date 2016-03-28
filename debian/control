@@ -22,7 +22,9 @@ Depends: ${misc:Depends},
          dconf-service,
          dconf-gsettings-backend,
          dbus,
-         whynot
+         whynot,
+         systemstate,
+         systemstate-plugin-hwhal
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.

@@ -8,3 +8,4 @@ bin/shutdown bin/halt
 run/runit/getty etc/runit/runsvdir/default/getty/supervise
 run/runit/dbus etc/runit/runsvdir/default/dbus/supervise
 run/runit/whynot etc/runit/runsvdir/default/whynot/supervise
+run/runit/systemstate etc/runit/runsvdir/default/systemstate/supervise
