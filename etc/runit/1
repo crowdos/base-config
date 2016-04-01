@@ -71,3 +71,8 @@ dmesg > /var/log/dmesg.log
 
 # TODO: we need to check boot parameters and decide which runlevel to use
 runsvchdir default > /dev/null
+
+
+for f in /etc/runit/boot.d/*.sh; do
+    [ -r $f ] && . $f
+done
