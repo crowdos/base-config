@@ -7,7 +7,7 @@ LAST=0
 test -x /etc/runit/reboot && LAST=6
 
 echo 'Waiting for services to stop...'
-sv -w196 force-stop /service/*
+sv force-stop /service/*
 sv exit /service/*
 
 echo 'Shutdown...'
