@@ -52,7 +52,7 @@ hwclock --utc --hctosys --noadjfile
 
 # udev:
 /sbin/udevd --daemon
-/sbin/udevadm trigger
+/sbin/udevadm trigger --action=add
 /sbin/udevadm settle
 
 # phew, now the rest
