@@ -21,6 +21,10 @@ include /usr/share/dpkg/default.mk
 %:
 	dh $@
 
+override_dh_install:
+	dh_install
+	dh_runit
+
 # Idea from https://wiki.debian.org/ConfigPackages
 override_dh_installdeb:
 	dh_installdeb

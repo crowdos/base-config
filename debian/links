@@ -3,9 +3,3 @@ etc/runit/runsvdir/default etc/runit/runsvdir/current
 run/runit/stopit etc/runit/stopit
 run/runit/reboot etc/runit/reboot
 bin/shutdown bin/halt
-
-# services:
-run/runit/getty etc/runit/runsvdir/default/getty/supervise
-run/runit/dbus etc/runit/runsvdir/default/dbus/supervise
-run/runit/whynot etc/runit/runsvdir/default/whynot/supervise
-run/runit/systemstate etc/runit/runsvdir/default/systemstate/supervise
