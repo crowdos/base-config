@@ -2,3 +2,4 @@ runit/dbus dbus
 runit/getty getty
 runit/systemstate systemstate
 runit/whynot whynot
+runit/network-manager network-manager

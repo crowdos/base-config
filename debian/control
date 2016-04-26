@@ -24,7 +24,8 @@ Depends: ${misc:Depends},
          dbus,
          whynot,
          systemstate,
-         systemstate-plugin-hwhal
+         systemstate-plugin-hwhal,
+         network-manager
 Description: Basic configurtion
  Basic files and configuration intended to override some Debian
  configuration.

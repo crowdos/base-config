@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sv start /service/dbus || exit 1
+
+exec /usr/sbin/NetworkManager -n

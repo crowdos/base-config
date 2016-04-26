@@ -8,11 +8,20 @@ localhost
 EOF
 }
 
+create_usb0_file() {
+  if [ -e /etc/NetworkManager/system-connections/usb0 ]; then return 0; fi
+  mkdir -p /etc/NetworkManager/system-connections/
+  cp /usr/share/crowdos-base/usb0 /etc/NetworkManager/system-connections/usb0
+  chown root:root /etc/NetworkManager/system-connections/usb0
+  chmod 600 /etc/NetworkManager/system-connections/usb0
+}
+
 case "$1" in
     configure)
     /usr/bin/dconf update
     if [ -z "$2" ]; then
         create_hostname_file
+        create_usb0_file
 	echo "debconf debconf/frontend select Noninteractive" | debconf-set-selections
     fi
     ;;
